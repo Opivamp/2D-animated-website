@@ -35,6 +35,9 @@ next-env.d.ts
 # reverse-engineering scratch analysis files
 download_css.js
 download_*
+ref_chunks/
+ref_css/
+ref_*
 analyze_*
 audit_*
 chunk_*
