@@ -31,3 +31,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# reverse-engineering scratch analysis files
+download_css.js
+download_*
+analyze_*
+audit_*
+chunk_*
+decompile_*
+dump_*
+extract_*
+homepage_*
+inspect_*
+menu_*
+search_*
+*.html
+*.txt
+all_sections_summary.json
+ref_analysis.json
+chunk_findings.json
+ref_dom_sections.json

@@ -1,38 +1,38 @@
 import React from 'react';
 import Hero from '@/components/home/Hero';
 import MouseTrail from '@/components/home/MouseTrail';
-import ApproachSlider from '@/components/home/ApproachSlider';
-import MarqueStrip from '@/components/home/MarqueStrip';
-import ServicesGrid from '@/components/home/ServicesGrid';
+import ApproachSection from '@/components/home/ApproachSection';
 import StatementBanner from '@/components/home/StatementBanner';
+import ServicesGrid from '@/components/home/ServicesGrid';
+import BuildsIntroduction from '@/components/home/BuildsIntroduction';
 import BuildsShowcase from '@/components/home/BuildsShowcase';
 import StockShowcase from '@/components/home/StockShowcase';
 
 export default function HomePage() {
   return (
     <>
-      {/* 1. Atelier Philosophy & Mouse Image Trail */}
+      {/* 1. Section 1: Atelier Philosophy & Interactive Mouse Image Trail */}
       <MouseTrail />
 
-      {/* 2. Hero Presentation */}
+      {/* 2. Section 2: Hero Presentation with Cinematic Word Reveal & Scroll Scrub */}
       <Hero />
 
-      {/* 3. The 3-Pillar Approach Slider */}
-      <ApproachSlider />
+      {/* 3. Section 3 to 6: Our Approach To Every Build + Marquee + 3 Sticky Pinned Pillars */}
+      <ApproachSection />
 
-      {/* 4. Luxury Automotive Marques Marquee */}
-      <MarqueStrip />
-
-      {/* 5. The 6 Bespoke Atelier Services */}
-      <ServicesGrid />
-
-      {/* 6. Editorial Statement Banner */}
+      {/* 4. Section 7: Editorial Statement Banner with Vertical Parallax Scrub */}
       <StatementBanner />
 
-      {/* 7. Previous Builds Archive Showcase */}
+      {/* 5. Section 8 to 13: 6 Core Bespoke Atelier Services */}
+      <ServicesGrid />
+
+      {/* 6. Section 14: SIGNATURE SHOWSTOPPER — "Ordinary Ends Here" 3-Car Multi-Layer Parallax */}
+      <BuildsIntroduction />
+
+      {/* 7. Section 15: Previous Builds Full-Bleed Showcase */}
       <BuildsShowcase />
 
-      {/* 8. Available Stock Acquisition Showcase */}
+      {/* 8. Section 16: Available Stock Full-Bleed Fleet Showcase */}
       <StockShowcase />
     </>
   );

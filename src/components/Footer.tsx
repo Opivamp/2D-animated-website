@@ -6,7 +6,11 @@ import Link from 'next/link';
 
 export default function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined' && (window as any).__lenis) {
+      (window as any).__lenis.scrollTo(0, { duration: 1.5 });
+    } else if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const navLinks = [
@@ -48,9 +52,12 @@ export default function Footer() {
           <h2 className="font-editorial text-[clamp(5.4rem,10vw,11.2rem)] font-light leading-[1.02] tracking-tight mb-10 text-[#F2F1ED] capitalize">
             Refuse Ordinary
           </h2>
-          <Link href="/contact" className="forge-btn forge-btn-fill group text-[1.5rem] px-12 py-5">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-4 px-12 py-5 rounded-full border border-[#F2F1ED]/25 hover:border-[#F2F1ED] bg-[#F2F1ED] text-[#0C0C0C] hover:bg-transparent hover:text-[#F2F1ED] font-geist text-sm tracking-widest uppercase transition-all duration-300 group shadow-2xl"
+          >
             <span>Start Your Project</span>
-            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">→</span>
           </Link>
         </div>
 
@@ -60,10 +67,10 @@ export default function Footer() {
             type="button"
             onClick={scrollToTop}
             aria-label="Back to Top"
-            className="forge-nav-toggle group"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#F2F1ED]/20 hover:border-[#F2F1ED] bg-[#0C0C0C]/60 backdrop-blur-md font-geist text-xs uppercase tracking-widest text-[#F2F1ED] transition-all duration-300 group shadow-lg"
           >
             <span>Back to Top</span>
-            <span className="inline-block transition-transform duration-300 group-hover:-translate-y-1">&uarr;</span>
+            <span className="inline-block transition-transform duration-300 group-hover:-translate-y-1">↑</span>
           </button>
         </div>
       </div>
@@ -99,24 +106,17 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[#F2F1ED]/50 hover:text-[#F2F1ED] transition-colors"
+                  className="text-[#F2F1ED]/50 hover:text-[#F2F1ED]/80 transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
 
-            {/* Attribution */}
-            <div className="md:col-span-3 flex md:justify-end items-center gap-6 text-[1.2rem] text-[#F2F1ED]/40 font-mono">
-              <span>&copy; {new Date().getFullYear()} Forge Automotive</span>
-              <a
-                href="https://12.studio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#F2F1ED] transition-colors"
-              >
-                12.studio
-              </a>
+            {/* Atelier Studio Credits */}
+            <div className="md:col-span-3 text-[1.3rem] text-[#F2F1ED]/40 md:text-right">
+              <p>Forge Automotive &copy; {new Date().getFullYear()}</p>
+              <p className="mt-1 text-xs">Atelier for Bespoke Vehicles &bull; UK</p>
             </div>
           </div>
         </div>

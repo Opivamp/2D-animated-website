@@ -70,9 +70,9 @@ export const BUILDS: Build[] = [
     "model": "Urus",
     "summary": "Gloss yellow against forged carbon, with nothing about it asking to be overlooked.",
     "description": "Gloss yellow against forged carbon, with nothing about it asking to be overlooked. Featuring a sculptured forged carbon bonnet, aggressive front bumper splitters, and custom quad aerodynamic diffusers.",
-    "coverImage": "https://cdn.forgeautomotive.media/images/ed72g2cx/production/3e271eb5b23d94b05bc3e21828cb0f19c00b9041-880x1592.jpg",
+    "coverImage": "/images/fe99714e1f274253e7a543c6f3dcf34f7a553f3f-1536x2048.jpg",
     "gallery": [
-      "https://cdn.forgeautomotive.media/images/ed72g2cx/production/3e271eb5b23d94b05bc3e21828cb0f19c00b9041-880x1592.jpg",
+      "/images/fe99714e1f274253e7a543c6f3dcf34f7a553f3f-1536x2048.jpg",
       "/images/fe99714e1f274253e7a543c6f3dcf34f7a553f3f-1536x2048.jpg",
       "/images/2640c7b4aad8695a6a341cfd27c2e15edcdfa702-1536x2048.jpg",
       "/images/298b48f685cadab5e0a177c860dce181703b8da8-1536x2048.jpg",
