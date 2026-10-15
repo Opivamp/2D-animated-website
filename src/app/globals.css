@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'GeistSans';
+  src: url('/fonts/Geist_Variable.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'editorial';
+  src: url('/fonts/light.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'editorial';
+  src: url('/fonts/ultralight.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'editorial';
+  src: url('/fonts/ultralight_italic.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 200;
+  font-style: italic;
+}
+
+:root {
+  --brand-bc1: #0C0C0C;
+  --brand-bc2: #161616;
+  --brand-bc3: #410306;
+  --brand-bc4: #C5A064;
+  --brand-bc5: #F2F1ED;
+  --global-white: #ffffff;
+  --global-black: #000000;
+  --feedback-positive: #3adb76;
+  --feedback-negative: #cc4b37;
+  --feedback-warning: #face10;
+
+  --space-s: 4.8rem;
+  --space-m: 6rem;
+  --space-l: 10rem;
+  --space-xl: 12rem;
+  --space-col: calc(8.333vw + 1.8rem);
+
+  --gap-xxs: 0.2rem;
+  --gap-xs: 0.4rem;
+  --gap-s: 0.8rem;
+  --gap-sm: 1.6rem;
+  --gap-m: 2.4rem;
+  --gap-l: 3.2rem;
+  --gap-xl: 4rem;
+  --gap-xxl: 6.4rem;
+  --gap-huge: 8rem;
+  --gap-uber: 9.6rem;
+  --gap-massive: 12.8rem;
+  --gap-col: calc(8.333vw + 1.6rem);
+
+  --br-xs: 0.3rem;
+  --br-s: 0.6rem;
+  --br-m: 1.2rem;
+  --br-l: 1.8rem;
+  --br-round: 999rem;
+
+  --easing-bezzy: cubic-bezier(0.8, 0, 0, 1);
+  --easing-bezzy2: cubic-bezier(0.430, 0.195, 0.020, 1);
+  --easing-bezzy3: cubic-bezier(0.5, 0, 0, 1);
+  --easing-ease: ease-in-out;
+
+  --time-s: 0.15s;
+  --time-m: 0.3s;
+  --time-l: 0.6s;
+  --page-beat-dur: 1.2s;
+
+  --font-heading: 'editorial', Georgia, Times, 'Times New Roman', serif;
+  --font-body: 'GeistSans', Arial, Helvetica, 'Liberation Sans', sans-serif;
+  --font-mono: 'GeistMono', monospace;
+
+  --header-size: 3.2rem;
+  --header-size-mobile: 8.8rem;
+  --header-size-desktop: 9.6rem;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricprecision;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: var(--brand-bc1);
+  color: var(--brand-bc5);
+}
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 68.75%;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  background-color: var(--brand-bc1);
+  color: var(--brand-bc5);
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--brand-bc3);
+  color: var(--brand-bc5);
+}
+
+/* Custom button with letter animation */
+.forge-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1.4rem 2.8rem;
+  background: transparent;
+  color: var(--brand-bc5);
+  border: 1px solid rgba(242, 241, 237, 0.2);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.4s var(--easing-bezzy2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.forge-btn:hover {
+  border-color: rgba(242, 241, 237, 0.8);
+  background: rgba(242, 241, 237, 0.05);
+}
+
+.forge-btn-fill {
+  background: var(--brand-bc5);
+  color: var(--brand-bc1);
+  border: 1px solid var(--brand-bc5);
+}
+
+.forge-btn-fill:hover {
+  background: #ffffff;
+  color: var(--global-black);
+  border-color: #ffffff;
+  box-shadow: 0 0 25px rgba(242, 241, 237, 0.2);
+}
+
+/* Header animated toggle */
+.forge-nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  background: rgba(22, 22, 22, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(242, 241, 237, 0.15);
+  color: var(--brand-bc5);
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.3s var(--easing-bezzy2);
+}
+
+.forge-nav-toggle:hover {
+  border-color: rgba(242, 241, 237, 0.4);
+  background: rgba(22, 22, 22, 0.9);
+}
+
+/* Hamburger 3-bar icon */
+.burger-bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.8rem;
+  height: 1.2rem;
+}
+
+.burger-bars span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background-color: var(--brand-bc5);
+  transition: transform 0.3s var(--easing-bezzy2), opacity 0.3s var(--easing-bezzy2);
+}
+
+.burger-bars.open span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.burger-bars.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-bars.open span:nth-child(3) {
+  transform: translateY(-5.5px) rotate(-45deg);
+}
+
+/* Marquee track */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle image zoom on card hover */
+.card-hover-image {
+  transition: transform 0.9s var(--easing-bezzy2);
+}
+
+.group:hover .card-hover-image {
+  transform: scale(1.05);
+}
+
+@keyframes trailFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+  25% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  70% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+  }
+}
+
+.animate-trail-fade {
+  animation: trailFade 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
